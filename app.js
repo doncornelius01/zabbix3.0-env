@@ -13,7 +13,7 @@ function insert(text) {
   const end = input.selectionEnd ?? start;
   input.setRangeText(text, start, end, 'end');
   input.focus();
-  message.textContent = 'Ready when you are.';
+  message.textContent = 'Ready to calculate.';
 }
 function evaluate(record = true) {
   try {
@@ -21,7 +21,7 @@ function evaluate(record = true) {
     const value = calculate(expression);
     answer = value;
     output.textContent = format(value, scientific);
-    message.textContent = 'A little clarity. There you go.';
+    message.textContent = 'Calculated.';
     if (record) {
       history.unshift({ expression, value });
       history = history.slice(0, 8);
@@ -39,7 +39,7 @@ function renderHistory() {
   if (!history.length) {
     const empty = document.createElement('p');
     empty.className = 'empty';
-    empty.textContent = 'A fresh start. Your calculations will appear here.';
+    empty.textContent = 'No calculations yet.';
     list.append(empty);
   }
   for (const item of history) {
@@ -60,7 +60,7 @@ document.querySelector('.calculator').addEventListener('click', event => {
   if (button.dataset.insert) return insert(button.dataset.insert);
   const action = button.dataset.action;
   if (action === 'equals') evaluate();
-  if (action === 'clear') { input.value = ''; output.textContent = '0'; message.textContent = 'A fresh start.'; input.focus(); }
+  if (action === 'clear') { input.value = ''; output.textContent = '0'; message.textContent = 'Enter an expression.'; input.focus(); }
   if (action === 'backspace') {
     const start = input.selectionStart;
     const end = input.selectionEnd;
@@ -91,6 +91,6 @@ document.querySelector('#notation').addEventListener('click', event => {
 });
 input.addEventListener('keydown', event => {
   if (event.key === 'Enter' || event.key === '=') { event.preventDefault(); evaluate(); }
-  if (event.key === 'Escape') { input.value = ''; output.textContent = '0'; message.textContent = 'A fresh start.'; }
+  if (event.key === 'Escape') { input.value = ''; output.textContent = '0'; message.textContent = 'Enter an expression.'; }
 });
 document.querySelector('#clear-history').addEventListener('click', () => { history = []; renderHistory(); });
