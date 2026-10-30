@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152827">
+  <title>Orbit — Scientific calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="./"><span class="logo">◒</span> orbit<span class="brand-dot">.</span></a><span class="header-label">A LITTLE SPACE TO THINK</span></header>
+    <div class="workspace">
+      <section class="intro"><div class="eyebrow">YOUR EVERYDAY NUMBER COMPANION</div><h1>Big ideas.<br>Small calculations.</h1><p>From the everyday to the exponential.<br>A clear head starts with a clear answer.</p><div class="intro-note"><span>✳</span> A little precision goes a long way.</div></section>
+      <section class="calculator" aria-label="Scientific calculator">
+        <div class="calculator-top"><span><i></i> SCIENTIFIC CALCULATOR</span><span class="radians">RAD</span></div>
+        <div class="display"><div class="display-meta"><span id="memory-indicator">MEMORY EMPTY</span><button id="notation" aria-pressed="false">SCI <span>OFF</span></button></div><label class="sr-only" for="expression">Expression</label><input id="expression" placeholder="0" autocomplete="off" spellcheck="false" inputmode="text"><output id="result" aria-live="polite">0</output><div id="message" role="status">Make room for your next idea.</div></div>
+        <div class="memory-row"><button data-action="mc" title="Clear memory">MC</button><button data-action="mr" title="Recall memory">MR</button><button data-action="ms" title="Store result">MS</button><button data-action="mplus" title="Add result to memory">M+</button><button data-action="mminus" title="Subtract result from memory">M−</button></div>
+        <div class="keys">
+          <button data-insert="sin(">sin</button><button data-insert="cos(">cos</button><button data-insert="tan(">tan</button><button data-insert="(">(</button><button data-insert=")">)</button>
+          <button data-insert="ln(">ln</button><button data-insert="log(">log</button><button data-insert="sqrt(">√</button><button data-insert="^">xʸ</button><button data-insert="pi">π</button>
+          <button class="clear" data-action="clear">AC</button><button data-action="backspace" aria-label="Backspace">⌫</button><button data-insert="%">%</button><button data-insert="e">e</button><button class="operator" data-insert="/">÷</button>
+          <button class="number" data-insert="7">7</button><button class="number" data-insert="8">8</button><button class="number" data-insert="9">9</button><button data-insert="e+" title="Scientific exponent, for example 2e+3">EXP</button><button class="operator" data-insert="*">×</button>
+          <button class="number" data-insert="4">4</button><button class="number" data-insert="5">5</button><button class="number" data-insert="6">6</button><button data-insert="^2">x²</button><button class="operator" data-insert="-">−</button>
+          <button class="number" data-insert="1">1</button><button class="number" data-insert="2">2</button><button class="number" data-insert="3">3</button><button data-action="sign">+/−</button><button class="operator" data-insert="+">+</button>
+          <button class="number zero" data-insert="0">0</button><button class="number" data-insert=".">.</button><button data-action="ans">ANS</button><button class="equals" data-action="equals">=</button>
+        </div>
+        <div class="calculator-footer"><span>DESIGNED FOR A CLEARER MIND</span><span>↵ to calculate</span></div>
+      </section>
+      <aside class="history"><div class="history-heading"><h2>Recent calculations</h2><button id="clear-history">Clear</button></div><div id="history-list"><p class="empty">A fresh start.<br>Your calculations will appear here.</p></div><div class="hint"><span>↗</span><p>Think exponentially.<br><small>Use EXP to enter numbers like 6.02e+23. Trigonometric functions use radians.</small></p></div></aside>
+    </div>
+    <footer><span>A little tool. Endless possibilities.</span><span>PRECISION, WITHOUT THE NOISE.</span></footer>
+  </main><script type="module" src="app.js"></script>
+</body>
+</html>
